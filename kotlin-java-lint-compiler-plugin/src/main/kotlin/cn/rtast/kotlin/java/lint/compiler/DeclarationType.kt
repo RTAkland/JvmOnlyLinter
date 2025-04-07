@@ -9,5 +9,8 @@
 package cn.rtast.kotlin.java.lint.compiler
 
 enum class DeclarationType(val nameZh: String, val nameEn: String) {
-    Class("类", "Class"), Function("方法", "Function")
+    Class("类", "Class"),
+    Function("方法", "Function"),
+    Property("属性", "Property"),
+    Field("字段", "Field")
 }

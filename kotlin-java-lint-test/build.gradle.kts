@@ -1,9 +1,10 @@
 plugins {
     kotlin("multiplatform")
+    id("cn.rtast.kotlin-java-lint") version "0.0.1"
 }
 
 kotlin {
-    mingwX64()
+    jvm()
 
     sourceSets {
         commonMain.dependencies {

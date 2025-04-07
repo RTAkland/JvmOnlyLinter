@@ -1,18 +1,16 @@
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 
 plugins {
-    kotlin("multiplatform")
+    kotlin("jvm")
 }
 
-kotlin {
-    mingwX64()
-    linuxX64()
-    linuxArm64()
-    macosArm64()
-    macosX64()
-    jvm {
-        compilerOptions.jvmTarget = JvmTarget.JVM_11
-    }
+tasks.compileKotlin {
+    compilerOptions.jvmTarget = JvmTarget.JVM_1_8
+}
+
+tasks.compileJava {
+    sourceCompatibility = "1.8"
+    targetCompatibility = "1.8"
 }
 
 publishing {
