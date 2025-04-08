@@ -10,6 +10,8 @@
 
 package cn.rtast.jvmonly.linter
 
+import cn.rtast.jvmonly.linter.util.DEVELOPMENT_MODE
+import cn.rtast.jvmonly.linter.util.ENABLED
 import com.google.auto.service.AutoService
 import org.jetbrains.kotlin.backend.common.extensions.IrGenerationExtension
 import org.jetbrains.kotlin.cli.common.messages.MessageCollector

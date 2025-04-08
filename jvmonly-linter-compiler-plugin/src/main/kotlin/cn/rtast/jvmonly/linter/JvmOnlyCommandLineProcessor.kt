@@ -10,6 +10,10 @@
 
 package cn.rtast.jvmonly.linter
 
+import cn.rtast.jvmonly.linter.util.CUSTOM_ANNOTATION
+import cn.rtast.jvmonly.linter.util.DEVELOPMENT_MODE
+import cn.rtast.jvmonly.linter.util.ENABLED
+import cn.rtast.jvmonly.linter.util.REPORT_LEVEL
 import com.google.auto.service.AutoService
 import org.jetbrains.kotlin.compiler.plugin.AbstractCliOption
 import org.jetbrains.kotlin.compiler.plugin.CliOption

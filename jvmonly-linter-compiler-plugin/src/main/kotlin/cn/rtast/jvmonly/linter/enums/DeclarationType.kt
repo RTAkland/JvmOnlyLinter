@@ -6,7 +6,7 @@
  */
 
 
-package cn.rtast.jvmonly.linter
+package cn.rtast.jvmonly.linter.enums
 
 enum class DeclarationType(val nameZh: String, val nameEn: String) {
     Class("类", "Class"),

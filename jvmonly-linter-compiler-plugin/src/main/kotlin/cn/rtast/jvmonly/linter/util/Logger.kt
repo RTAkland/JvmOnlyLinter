@@ -6,7 +6,7 @@
  */
 
 
-package cn.rtast.jvmonly.linter
+package cn.rtast.jvmonly.linter.util
 
 import org.jetbrains.kotlin.cli.common.messages.CompilerMessageSeverity
 import org.jetbrains.kotlin.cli.common.messages.MessageCollector

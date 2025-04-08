@@ -4,7 +4,9 @@ This gradle/kotlin compiler plugin(KCP) is a linter design for kotlin multiplatf
 with JVM target and inspect if your kotlin code called the declaration with `@JvmOnly` annotation,
 if so, the compiler will get error and cannot be compiled successfully(This can be set via dsl by default
 its level is `ERROR`, `WARNING` is also available If set this value to `WARNING` the compiler will not get
-error, just print a warning info to the console)
+error, just print a warning info to the console).
+
+This compiler plugin support K2
 
 # Apply plugin
 
@@ -97,6 +99,8 @@ fun main() {
 此插件适用于开发Kotlin multiplatform 库时使用, 它提供了一个简单的注解来将一个IrCall标记为仅Jvm可用(或仅推荐JVM使用)。
 
 插件会检查所有的IrCall, 检查是否在Kotlin中调用了被@JvmOnly注解的declaration, 如果检测到了可以让编译器输出错误或者警告。
+
+插件支持K2
 
 # 应用插件
 

@@ -8,6 +8,7 @@
 
 package cn.rtast.jvmonly.linter
 
+import cn.rtast.jvmonly.linter.transformer.JvmOnlyLinterTransformer
 import org.jetbrains.kotlin.backend.common.extensions.IrGenerationExtension
 import org.jetbrains.kotlin.backend.common.extensions.IrPluginContext
 import org.jetbrains.kotlin.cli.common.messages.MessageCollector

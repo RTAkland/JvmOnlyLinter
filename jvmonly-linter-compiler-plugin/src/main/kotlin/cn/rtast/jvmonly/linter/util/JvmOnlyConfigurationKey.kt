@@ -6,8 +6,9 @@
  */
 
 
-package cn.rtast.jvmonly.linter
+package cn.rtast.jvmonly.linter.util
 
+import cn.rtast.jvmonly.linter.JvmOnlyReportLevel
 import org.jetbrains.kotlin.config.CompilerConfigurationKey
 
 val DEVELOPMENT_MODE = CompilerConfigurationKey<Boolean>("developmentMode")
