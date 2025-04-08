@@ -1,6 +1,6 @@
 # JvmOnlyLinter
 
-This gradle/kotlin compiler plugin(KCP) is a linter design for kotlin multiplatform library
+This gradle/kotlin compiler plugin(KCP) is a linter design for kotlin multiplatform library development
 with JVM target and inspect if your kotlin code called the declaration with `@JvmOnly` annotation,
 if so, the compiler will get error and cannot be compiled successfully(This can be set via dsl by default
 its level is `ERROR`, `WARNING` is also available If set this value to `WARNING` the compiler will not get
