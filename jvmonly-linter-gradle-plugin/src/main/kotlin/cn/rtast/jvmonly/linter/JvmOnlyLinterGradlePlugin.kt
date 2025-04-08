@@ -19,7 +19,7 @@ class JvmOnlyLinterGradlePlugin : KotlinCompilerPluginSupportPlugin {
     private var gradleExtension = JvmOnlyGradleExtension()
     override fun applyToCompilation(kotlinCompilation: KotlinCompilation<*>): Provider<List<SubpluginOption>> {
         kotlinCompilation.dependencies {
-            implementation("cn.rtast.jvmonly-linter:jvmonly-linter-runtime:${BuildConfig.KOTLIN_PLUGIN_VERSION}")
+            api("cn.rtast.jvmonly-linter:jvmonly-linter-runtime:${BuildConfig.KOTLIN_PLUGIN_VERSION}")
         }
         gradleExtension = kotlinCompilation.target.project.extensions.findByType(JvmOnlyGradleExtension::class.java)
             ?: JvmOnlyGradleExtension()
