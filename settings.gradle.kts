@@ -6,9 +6,9 @@ pluginManagement {
     }
 }
 
-rootProject.name = "kotlin-Java-Lint"
+rootProject.name = "jvmonly-linter"
 
-include(":kotlin-java-lint-compiler-plugin")
-include(":kotlin-java-lint-gradle-plugin")
-include(":kotlin-java-lint-runtime")
-include(":kotlin-java-lint-test")
+include(":jvmonly-linter-compiler-plugin")
+include(":jvmonly-linter-gradle-plugin")
+include(":jvmonly-linter-runtime")
+include(":jvmonly-linter-test")

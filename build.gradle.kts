@@ -2,13 +2,14 @@ plugins {
     kotlin("jvm") version "2.1.20" apply false
     kotlin("multiplatform") version "2.1.20" apply false
     kotlin("kapt") version "2.1.20" apply false
+    id("com.github.gmazzo.buildconfig") version "5.3.5" apply false
     id("maven-publish")
 }
 
 val pluginVersion: String by extra
 
 subprojects {
-    group = "cn.rtast.kotlin-java-lint"
+    group = "cn.rtast.jvmonly-linter"
     version = pluginVersion
 
     repositories {
@@ -21,13 +22,13 @@ subprojects {
 
     publishing {
         repositories {
-            mavenLocal()
-//            maven("https://maven.rtast.cn/releases") {
-//                credentials {
-//                    username = "RTAkland"
-//                    password = System.getenv("PUBLISH_TOKEN")
-//                }
-//            }
+//            mavenLocal()
+            maven("https://maven.rtast.cn/releases") {
+                credentials {
+                    username = "RTAkland"
+                    password = System.getenv("PUBLISH_TOKEN")
+                }
+            }
         }
     }
 }
