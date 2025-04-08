@@ -55,6 +55,8 @@ jvmOnly {
     reportLevel = JvmOnlyReportLevel.ERROR
     // set the custom annotation, by default it is @JvmOnly (this property is the annotation class reference like `cn.rtast.jvmonly.linter.JvmOnly`)
     customAnnotation = "com.example.annotations.MyCustomAnnotation"
+    // Notice JvmOnlyLinter processing annotations at the IR phase so, make sure your custom
+    // annotation retention is `BINARY` or `RUNTIME` (`BINARY` is recommended) 
 }
 ```
 

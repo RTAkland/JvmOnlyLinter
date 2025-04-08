@@ -1,6 +1,7 @@
 plugins {
     kotlin("jvm")
     kotlin("kapt")
+    id("com.github.johnrengelman.shadow") version "8.1.1"
 }
 
 dependencies {
@@ -17,4 +18,15 @@ publishing {
             from(components["java"])
         }
     }
+}
+
+tasks.build {
+    dependsOn(tasks.shadowJar)
+}
+
+tasks.shadowJar {
+    archiveClassifier = ""
+    exclude("kotlin/**")
+    exclude("org/**")
+    mergeServiceFiles()
 }
