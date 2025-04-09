@@ -44,7 +44,6 @@ class JvmOnlyLinterTransformer(
         if (hasAnnotation) {
             val name = expression.symbol.owner.name.toString()
             val className = expression.symbol.owner.parentAsClass.name.toString()
-            expression.symbol.owner.file
             messageCollector.report(
                 compilerReportLevel,
                 "You are trying to use a Java only declaration $className:$name | " +
