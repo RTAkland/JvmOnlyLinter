@@ -14,3 +14,7 @@ import org.jetbrains.kotlin.cli.common.messages.MessageCollector
 fun MessageCollector.log(content: Any?) {
     this.report(CompilerMessageSeverity.WARNING, content.toString())
 }
+
+fun MessageCollector.error(content: Any?) {
+    this.report(CompilerMessageSeverity.ERROR, content.toString())
+}

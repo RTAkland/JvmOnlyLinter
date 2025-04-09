@@ -16,6 +16,5 @@ fun test() {
 }
 
 fun main() {
-    test()
     println("111")
 }

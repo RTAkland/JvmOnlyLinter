@@ -17,5 +17,9 @@ package cn.rtast.jvmonly.linter
     AnnotationTarget.FIELD,
     AnnotationTarget.ANNOTATION_CLASS
 )
-@Retention(AnnotationRetention.BINARY)
+@Retention(AnnotationRetention.RUNTIME)
+@RequiresOptIn(
+    message = "此API建议/只能在Java中使用 | This API can only / recommend be used in Java.",
+    level = RequiresOptIn.Level.ERROR
+)
 annotation class JvmOnly

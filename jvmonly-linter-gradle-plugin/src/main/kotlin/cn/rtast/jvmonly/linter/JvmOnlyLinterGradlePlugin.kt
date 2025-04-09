@@ -10,6 +10,7 @@ package cn.rtast.jvmonly.linter
 import cn.rtast.`jvmonly-linter`.BuildConfig
 import org.gradle.api.Project
 import org.gradle.api.provider.Provider
+import org.jetbrains.kotlin.gradle.dsl.KotlinMultiplatformExtension
 import org.jetbrains.kotlin.gradle.plugin.KotlinCompilation
 import org.jetbrains.kotlin.gradle.plugin.KotlinCompilerPluginSupportPlugin
 import org.jetbrains.kotlin.gradle.plugin.SubpluginArtifact
@@ -18,9 +19,6 @@ import org.jetbrains.kotlin.gradle.plugin.SubpluginOption
 class JvmOnlyLinterGradlePlugin : KotlinCompilerPluginSupportPlugin {
     private var gradleExtension = JvmOnlyGradleExtension()
     override fun applyToCompilation(kotlinCompilation: KotlinCompilation<*>): Provider<List<SubpluginOption>> {
-        kotlinCompilation.dependencies {
-            api("cn.rtast.jvmonly-linter:jvmonly-linter-runtime:${BuildConfig.KOTLIN_PLUGIN_VERSION}")
-        }
         gradleExtension = kotlinCompilation.target.project.extensions.findByType(JvmOnlyGradleExtension::class.java)
             ?: JvmOnlyGradleExtension()
         return kotlinCompilation.target.project.provider {
@@ -45,6 +43,17 @@ class JvmOnlyLinterGradlePlugin : KotlinCompilerPluginSupportPlugin {
 
     override fun apply(target: Project) {
         target.extensions.create("jvmOnly", JvmOnlyGradleExtension::class.java)
+        target.plugins.withId("org.jetbrains.kotlin.multiplatform") {
+            val kotlinExt = target.extensions.getByName("kotlin") as KotlinMultiplatformExtension
+            val commonMain = kotlinExt.sourceSets.findByName("commonMain")
+            if (commonMain != null) {
+                target.dependencies.add(
+                    commonMain.apiConfigurationName,
+                    "cn.rtast.jvmonly-linter:jvmonly-linter-runtime:${BuildConfig.KOTLIN_PLUGIN_VERSION}"
+                )
+            }
+
+        }
         super.apply(target)
     }
 }
