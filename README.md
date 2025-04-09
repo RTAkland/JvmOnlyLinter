@@ -6,7 +6,7 @@ if so, the compiler will get error and cannot be compiled successfully(This can 
 its level is `ERROR`, `WARNING` is also available If set this value to `WARNING` the compiler will not get
 error, just print a warning info to the console).
 
-This compiler plugin support K2
+This compiler plugin support K2 with Kotlin 2.1.20
 
 # Apply plugin
 
@@ -100,7 +100,7 @@ fun main() {
 
 插件会检查所有的IrCall, 检查是否在Kotlin中调用了被@JvmOnly注解的declaration, 如果检测到了可以让编译器输出错误或者警告。
 
-插件支持K2
+插件支持K2 和 Kotlin2.1.20
 
 # 应用插件
 
