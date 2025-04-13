@@ -41,7 +41,7 @@ pluginManagement {
 ```
 
 > The latest version of plugin and dependency can be found
-> at https://repo.maven.rtast.cn/listing/releases/cn/rtast/klogging/klogging
+> at https://repo.maven.rtast.cn/listing/releases/cn/rtast/jvmonly-linter/cn.rtast.jvmonly-linter.gradle.plugin
 
 # Configure plugin
 
@@ -106,7 +106,7 @@ fun main() {
 
 和上面的一样, 需要在build.gradle.kts和settings.gradle.kts中都添加我的maven仓库。
 
-插件的最新版本可以在 https://repo.maven.rtast.cn/listing/releases/cn/rtast/klogging/klogging 找到。
+插件的最新版本可以在 https://repo.maven.rtast.cn/listing/releases/cn/rtast/jvmonly-linter/cn.rtast.jvmonly-linter.gradle.plugin 找到。
 
 # 配置插件
 
